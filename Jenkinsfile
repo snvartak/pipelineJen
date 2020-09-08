@@ -5,8 +5,7 @@ agent any
 stages{
 stage('stage 1'){
 steps{
-withMaven(maven: 'maven_3_5_0')
-  {
+withMaven  {
     sh 'mvn clean compile'
   }
 }
@@ -14,7 +13,7 @@ withMaven(maven: 'maven_3_5_0')
 stage('stage 2')
 {
 steps{
-withMaven(maven: 'maven_3_5_0')
+withMaven
   {
     sh 'mvn test'
    }
@@ -24,7 +23,7 @@ withMaven(maven: 'maven_3_5_0')
 stage('stage 3')
   {
     steps{
-      withMaven(maven: 'maven_3_5_0)
+      withMaven
       {
         sh 'mvn deploy'
       }
